@@ -1,25 +1,24 @@
-import { Fragment } from "react/jsx-runtime";
+import { useState } from "react";
 
 function ListGroup() {
-  const items = ["New York", "San Francisco", "Tokyo", "London", "Paris"];
+  let items = ["New York", "San Francisco", "Tokyo", "London", "Paris"];
+ 
+  const [selectedIndex, setSelectedIndex] = useState(-1);
 
-  if (items.length === 0)
-    return (
-      <>
-        <h1>List</h1>
-        <p>No item found</p>;
-      </>
-    );
 
   return (
     <>
       <h1>List</h1>
       <ul className="list-group">
-        {items.map((item) => (
+        {items.map((item, index) => (
           <li
-            className="list-group-item"
+            className={
+              selectedIndex === index
+                ? "list-group-item active"
+                : "list-group-item"
+            }
             key={item}
-            onClick={(event) => console.log(event)}
+            onClick={() => {setSelectedIndex (index); }}
           >
             {item}
           </li>
