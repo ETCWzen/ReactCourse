@@ -141,9 +141,10 @@ You can use this to render content dynamically
 *Handling Events*
 How to handle click events 
 
-Where you are rendering an item, you need to add 
-className=’list-group-item” -  to apply CSS styling
+Where you are rendering an item, you can add a bootstrap class 
+className=’list-group-item” -  to apply the CSS styling
 
+in React each element has a property called onClick
 In the property of the code statement, add onClick={() => console.log (“Clicked”)}
 
 In order to capture the item that was clicked, simply replace “Clicked” string to (item) accessing item to be stored. 
@@ -159,15 +160,35 @@ Const handleClick = (event:MouseEvent) =>console.log(event);
 
 Managing State*
 How to add classes dynamically:
-let selectedIndex = -1;
+ //let selectedIndex = 0;
+ // Hook
+ //const arr = useState(-1);
+ //arr[0]// variable (selectedIndex)
+ //arr[1]// updater variable
+
+
+  const [selectedIndex, setSelectedIndex] = useState(-1);
+//const [name, setName] = useState(-1); // example of this functions property input 
+
+//*this is the event handler 
+//const handleClick = (event: MouseEvent)=>console.log(event);
 
 *Passing Data via Props*
-
+Props is the inputs to our components 
+instead of declaring the items as an array you can declare them as a property so then can be passed as an input to the component (similar to when you call a function and give it an argument )
+declare interface property : using type annotation to specify the various properties:
+Interface *nameOfComponent*Prop {
+    item:string[];
+    heading:string;
+}
 Declare props: Props in the function’s property
 
 Since item is no longer a property set in the function you can destruct the parameter into the prop of items and heading  
 In order to have access to the property of items and heading, you can declare it them as a 
-Interface Prop
+
+*Passing Functions as Props*
+
+
 
 *Props vs State*
 Props 
@@ -181,7 +202,7 @@ State
 
 *Passing Children* 
 VSCode extension (ES7)
-Rafce  (React Arrow Function Export component)– input into VSCode and will populate the default code snippet 
+RAFCE  (React Arrow Function Export component)– input into VSCode and will populate the default code snippet 
 Inspecting Components with React Developer Tools 
 
 *GetBootStrap Exercise*:
