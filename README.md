@@ -186,29 +186,53 @@ Declare props: Props in the function’s property
 Since item is no longer a property set in the function you can destruct the parameter into the prop of items and heading  
 In order to have access to the property of items and heading, you can declare it them as a 
 
-*Passing Functions as Props*
+*Passing Functions via Props*
 
+ListGroup Component : 
 
+you can define a function in Interface Props 
+onSelectItem: (item:string) = > console.log(item);
+
+In the listGroup Component:
+put onSelectItem into the function's parameter 
+and in the onClick function you can call the onSelectItem function  
+
+in the App.tsx add the onSelectItem's parameter:handlerSelectItem as part of the return's prop. 
 
 *Props vs State*
 Props 
-- used as input passed to a component
-- similar to Function argument  
+- input/arguments passed to a component
+- similar to Function arguments  
 - immutable( not able to change)  / Read only 	
 State 
--	Data managed by a component
--	Similar to local Variables 
+-	Internal data managed by a component
+-	Similar to local Variables inside a function 
 -	Mutable (can change data) read and write?
 
 *Passing Children* 
+Creating a component that will access children
+
 VSCode extension (ES7)
 RAFCE  (React Arrow Function Export component)– input into VSCode and will populate the default code snippet 
-Inspecting Components with React Developer Tools 
 
-*GetBootStrap Exercise*:
-Create a bootstrap Button component 
+Using the Children Prop, we can pass children to a component 
 
+*Inspecting Components with React Dev Tools*
+install react developer tools in chrome allows for you to see the COMPONENT TREE and access to other tools
+- you can see how it was rendered
+- you can also see the component's source code with the dev tool
 
+*GetBootStrap Button Exercise*:
+Create a bootstrap Button component :
+using getbootstrap.com encapsulate a button into a component 
 
-TIME STAMP OF VIDEO :50:46
-https://youtu.be/SqcY0GlETPk?si=frwBal4I6dF3qyZe&t=1966 
+inside the interface props: 
+you can set the color to only accept specific strings that match the classNames for each color in the button component 
+
+*Showing alert Exercise*
+
+using onClose you can set the visibility and re-render the page 
+
+TIME STAMP OF VIDEO 1:05:59
+https://youtu.be/SqcY0GlETPk?si=48dSVDEsPLJzsv-j&t=3959
+
